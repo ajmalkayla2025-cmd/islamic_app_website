@@ -17,6 +17,12 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
@@ -132,6 +138,15 @@
             text-align: center;
         }
 
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #94a3b8;
+        }
+
         @media (max-width: 600px) {
             .legal-content {
                 padding: 22px;
@@ -155,6 +170,7 @@
             </a>
             <div class="nav-links">
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="index.html#features">Features</a>
             </div>
         </div>
@@ -289,7 +305,15 @@
     </div>
 
     <footer>
-        © 2026 Islamic App. All rights reserved.
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#">Support</a>
+            </div>
+            <p>© 2026 Islamic App. All rights reserved.</p>
+        </div>
     </footer>
 
 </body>
