@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Islamic App - Daily Spiritual Companion</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.7;
+        }
+
+        a {
+            color: #38bdf8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #7dd3fc;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: #020617;
+            border-bottom: 1px solid #1e293b;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+        }
+
+        .nav-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a {
+            margin-left: 24px;
+            font-size: 14px;
+            color: #cbd5f5;
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding-top: 100px;
+            padding-bottom: 60px;
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #f8fafc;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #eab308;
+            /* Goldish Yellow */
+            color: #000;
+            padding: 12px 32px;
+            border-radius: 99px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background: #facc15;
+            text-decoration: none;
+            color: black;
+        }
+
+        /* Features Grid */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: #f8fafc;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid #334155;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #475569;
+        }
+
+        .card-icon {
+            font-size: 32px;
+            color: #eab308;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #f1f5f9;
+        }
+
+        .card p {
+            color: #94a3b8;
+            font-size: 15px;
+            margin: 0;
+        }
+
+        /* Mobile Mockup (CSS only) */
+        .mockup-container {
+            margin-top: 60px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .mockup {
+            width: 280px;
+            height: 580px;
+            background: #020617;
+            border: 8px solid #334155;
+            border-radius: 36px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .screen {
+            background: #0f172a;
+            height: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid #1e293b;
+            padding: 40px 0;
+            color: #64748b;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            margin: 0 10px;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="#" class="nav-logo">
+                <ion-icon name="moon-outline"></ion-icon>
+                Islamic App
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="container hero">
+        <h1>Your Daily Spiritual<br>Companion</h1>
+        <p>Accurate Prayer Times, Quran, and Qibla Direction.<br>Everything you need for your daily worship.</p>
+        <a href="#" class="btn">Download App</a>
+
+        <!-- CSS Phone Mockup -->
+        <div class="mockup-container">
+            <div class="mockup">
+                <div class="screen">
+                    <ion-icon name="moon" style="font-size: 48px; color: #eab308; margin-bottom: 20px;"></ion-icon>
+                    <h2 style="color: white; margin: 0; font-family: 'Outfit';">Fajr</h2>
+                    <h1 style="font-size: 40px; margin: 10px 0;">05:23</h1>
+                    <p style="font-size: 12px; opacity: 0.7;">Next Prayer: Sunrise</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div class="section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Designed for You</h2>
+                <p>Simple, privacy-focused, and accurate.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon"><ion-icon name="time-outline"></ion-icon></div>
+                    <h3>Prayer Times</h3>
+                    <p>Precise timings based on your location. Accurate calculation methods for every school of thought.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><ion-icon name="compass-outline"></ion-icon></div>
+                    <h3>Qibla Compass</h3>
+                    <p>Find the direction of the Kaaba form anywhere in the world with built-in sensor support.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><ion-icon name="book-outline"></ion-icon></div>
+                    <h3>Holy Quran</h3>
+                    <p>Read the Holy Quran with clear font and translations. Audio recitations included.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><ion-icon name="notifications-outline"></ion-icon></div>
+                    <h3>Adhan Alerts</h3>
+                    <p>Get notified for every prayer with beautiful Adhan sounds. Never miss a prayer again.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><ion-icon name="location-outline"></ion-icon></div>
+                    <h3>Mosque Finder</h3>
+                    <p>Easily locate nearby mosques and halal places around you.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+                    <h3>Privacy First</h3>
+                    <p>We do not track you. Your location data is used only for prayer calculations.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="#">Support</a>
+            </div>
+            <p>© 2026 Islamic App. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
